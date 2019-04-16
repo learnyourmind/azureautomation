@@ -1,2 +1,2 @@
 # azureautomation
-This project will provide python development for azure automation 
+This project will provide development for azure automation 
