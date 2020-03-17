@@ -2,7 +2,7 @@
 
 #Set variables
 PROJECT_DIR="$HOME/projects/azure_python/azureautomation"
-
+SUBSCRIPTION="Internal-susaha"
 
 # Upadate ubuntu and add gpg key
 sudo apt-get update -y sudo apt-get upgrade -y
@@ -28,7 +28,7 @@ az login
 
 # Lookup subscription status and default subscriptions
 az account list --output table
-az account set --subscription "Internal-susaha" 
+az account set --subscription  $SUBSCRIPTION
 az ad sp create-for-rbac --sdk-auth
 
 # Create azure environemnt 
