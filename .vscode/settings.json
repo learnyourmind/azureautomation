@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "mytestenv/bin/python",
+    "python.pythonPath": "/usr/bin/python3.7",
     "git.ignoreLimitWarning": true
 }
