@@ -15,7 +15,7 @@ SUBNET_NAME = 'azure-pytest-subnet'
 
 # VM
 NIC_NAME = 'pyaz-nic1'
-VM_NAME = 'MytestLiVM'
+VM_NAME = 'MytestLiVM1'
 
 USERNAME = 'pyuser'
 PASSWORD = 'Pa$$w0rd20'
