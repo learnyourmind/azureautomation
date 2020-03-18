@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Set variables
-PROJECT_DIR="$HOME/projects/azure_python/azureautomation/"
+PROJECT_DIR="$HOME/projects/"
 SUBSCRIPTION="Internal-susaha"
 
 # Upadate ubuntu and add gpg key
@@ -15,15 +15,18 @@ AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
 sudo apt-get update -y
 
-# Installing tools
-pip3 install azure azure-cli-core virtualenv  
+# Installing tools 
+sudo apt install python3-pip git
+pip3 install virtualenv  
 
 #setup virtualenv
-mkdir $PROJECT_DIR && cd $PROJECT_DIR
+cd $PROJECT_DIR
 VIRTENV="$HOME/.local/bin/virtualenv"
 $VIRTENV mytestenv 
-cd mytestenv/
-source bin/activate
+source mytestenv/bin/activate
+git clone https://github.com/sandy1saha03/azureautomation.git
+
+pip3 install azure azure-cli-core
 az login 
 
 # Lookup subscription status and default subscriptions
