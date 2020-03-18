@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Set variables
-PROJECT_DIR="$HOME/projects/"
+PROJECT_DIR="$HOME/azureautomation/"
 SUBSCRIPTION="Internal-susaha"
 
 # Upadate ubuntu and add gpg key
@@ -24,9 +24,9 @@ cd $PROJECT_DIR
 VIRTENV="$HOME/.local/bin/virtualenv"
 $VIRTENV mytestenv 
 source mytestenv/bin/activate
-git clone https://github.com/sandy1saha03/azureautomation.git
-
 pip3 install azure azure-cli-core
+
+#connect azure subscriptions
 az login 
 
 # Lookup subscription status and default subscriptions
