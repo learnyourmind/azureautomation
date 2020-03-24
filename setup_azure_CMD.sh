@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Set variables
-PROJECT_DIR="$HOME/azureautomation/"
+PROJECT_DIR="$HOME/projects/"
 SUBSCRIPTION="Internal-susaha"
 
 # Upadate ubuntu and add gpg key
@@ -24,9 +24,9 @@ cd $PROJECT_DIR
 VIRTENV="$HOME/.local/bin/virtualenv"
 $VIRTENV mytestenv 
 source mytestenv/bin/activate
-pip3 install azure azure-cli-core
 
-#connect azure subscriptions
+
+pip3 install azure azure-cli-core
 az login 
 
 # Lookup subscription status and default subscriptions
@@ -41,6 +41,6 @@ az network public-ip create -g PyAzrg -n azpy1-ip --allocation-method Dynamic --
 az network nic create -g PyAzrg --vnet-name azure-pytest-vnet --subnet azure-pytest-subnet -n pyaz-nic1 --public-ip-address azpy1-ip
 
 # Deploying VM
-pwd && ls -la
-/usr/bin/python3 $PROJECT_DIR/compute.py
-az vm list --resource-group PyAzrg
+# pwd && ls -la
+# /usr/bin/python3 $PROJECT_DIR/compute.py
+# az vm list --resource-group PyAzrg
